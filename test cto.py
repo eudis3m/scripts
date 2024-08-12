@@ -1,4 +1,5 @@
 
+#o sistema buscas as palavras mais comuns e menos comuns 
 import re
 from collections import Counter
 import math
@@ -12,7 +13,8 @@ def AnalisarFrequencia(texto, n=3):
  texto_limpo = limpar_texto(texto)
  #textCase = re.findall("the",texto_limpo.lower())
  textMax = re.findall(r'\b\w+\b', texto_limpo.lower())
- contagem = Counter(textMax)
+ contagem = Counter(textMax) 
+
  mais_comuns = contagem.most_common(n)
  menos_comum = contagem.most_common()[-1]
  return mais_comuns, menos_comum
